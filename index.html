@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
+    <script src="script.js" async></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    
+    <div class="landing-page">
+        <header>
+            <h1>Tic Tac Toe</h1>
+        </header>
+        <main>
+            <button>2 Players</button>
+            <button>Play vs AI</button>
+        </main>
+    </div>
+    <div class="modal-overlay">
+        <div class="form-container" id="player-form-container">
+            <form id="" action="">
+                <h1>Enter Player Names</h1>
+                <label for="">Player 1 (X):</label>
+                <input type="text" name="" id="" placeholder="Player 1" required>
+                <label for="">Player 2 (O):</label>
+                <input type="text" name="" id="" placeholder="Player 2" required>
+                <button class="hoverable form-button" type="reset">Cancel</button>
+                <button class="hoverable form-button" type="submit">Enter</button>
+            </form>
+        </div>
+        <div class="form-container" id="ai-form-container">
+            <form id="" action="">
+                <h1>Enter Player Name</h1>
+                <input type="text" name="" id="">
+                <button type="submit">Enter</button>
+            </form>
+        </div>
+    </div>
+    <main class="game-page">
+        <div class="status-message"></div>
+        <div class="player-1"></div>
+        <div class="board"></div>
+        <div class="player-2"></div>
+        <div class="game-buttons-group">
+            <button>Go Back</button>
+            <button>Restart</button>
+        </div>
+    </main>
+    <footer>
+        <p>© Copyright 2022 shamikrah. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>

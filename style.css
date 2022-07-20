@@ -1,0 +1,150 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    --theme-bg: rgb(254, 247, 255);
+    --theme-gradient: linear-gradient(to right, rgb(241, 255, 255),rgb(255, 235, 235));
+    --theme-blue: rgb(57, 196, 198);
+    --theme-red: rgb(198, 59, 57);
+    --theme-blue-to-red: linear-gradient(to right, rgb(57, 196, 198),rgb(198, 59, 57));
+    --theme-red-to-blue: linear-gradient(to right, rgb(198, 59, 57),rgb(57, 196, 198)); 
+    --theme-shadow: rgba(0, 0, 0, 0.2);
+}
+
+.hoverable {
+    cursor: pointer;
+}
+
+/* landing page */
+
+body {
+    background-color: var(--theme-bg);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border-style: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--theme-blue);
+    border: 0.2rem solid black;
+    font-size: 1.7rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover {
+    border: 0.2rem solid var(--theme-bg);
+    color: var(--theme-bg);
+    cursor: pointer;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 4rem);
+    gap: 1rem;
+}
+
+.landing-page main {
+    display: flex;
+    gap: 1rem;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--theme-blue);
+}
+
+header h1::before {
+    position: absolute;
+    content: "Tic Tac Toe";
+    color: var(--theme-red);
+    left: 29rem;
+    top: 14.3rem;
+}
+
+/* modal */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--theme-bg);
+    border-radius: 0.5rem;
+    width: min(20rem, 40%);
+    padding: 1.5rem 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+form h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#ai-form-container {
+    display: none;
+}
+
+input[type=text] {
+    border-radius: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.form-button {
+    width: 100%;
+}
+
+/* game page */
+
+.game-page {
+    display: none;
+}
+
+.game-buttons-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* footer */
+
+footer {
+    box-shadow: var(--theme-shadow) 0px 1px 4px;
+    justify-self: end;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
