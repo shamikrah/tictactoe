@@ -24,7 +24,7 @@ const gameBoard = (() => {
         while (board.hasChildNodes()) {
             board.removeChild(board.lastElementChild);
         }
-        boardArray = [];
+        boardArray.length = 0;
     }
 
     function disableBoard() {
@@ -133,6 +133,8 @@ const gameEngine = (() => {
     function resetGame() {
         playerOneTurn = true;
         playerTwoTurn = false;
+        winner = null;
+        isTie = false;
     }
 
     function isPlayerOneTurn() {
@@ -234,7 +236,6 @@ const displayController = (() => {
     function restartGame() {
         gameEngine.resetGame();
         gameBoard.resetBoard();
-        gameBoard.drawBoard();
         gameEngine.startGame();
     }
 
