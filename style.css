@@ -2,11 +2,8 @@
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     --theme-bg: rgb(254, 247, 255);
-    --theme-gradient: linear-gradient(to right, rgb(241, 255, 255),rgb(255, 235, 235));
     --theme-blue: rgb(57, 196, 198);
     --theme-red: rgb(198, 59, 57);
-    --theme-blue-to-red: linear-gradient(to right, rgb(57, 196, 198),rgb(198, 59, 57));
-    --theme-red-to-blue: linear-gradient(to right, rgb(198, 59, 57),rgb(57, 196, 198)); 
     --theme-shadow: rgba(0, 0, 0, 0.2);
 }
 
@@ -28,16 +25,21 @@ button {
     border-radius: 0.5rem;
     padding: 0.5rem;
     background-color: var(--theme-blue);
-    border: 0.2rem solid black;
+    color: var(--theme-bg);
+    border: 0.2rem solid var(--theme-bg);
     font-size: 1.7rem;
     font-weight: bold;
-    transition: all 0.3s;
+    transition: all 0.2s;
 }
 
 button:hover {
-    border: 0.2rem solid var(--theme-bg);
-    color: var(--theme-bg);
     cursor: pointer;
+    transform: scale(1.05);
+    background-color: var(--theme-red);
+}
+
+button:active {
+    border: 0.2rem solid black;
 }
 
 .landing-page {
@@ -64,14 +66,14 @@ header h1::before {
     position: absolute;
     content: "Tic Tac Toe";
     color: var(--theme-red);
-    left: 29rem;
-    top: 14.3rem;
+    left: 4rem;
+    top: 0.5rem;
 }
 
 /* modal */
 
 .modal-overlay {
-    display: none;
+    transform: scale(0);
     position: fixed;
     top: 0;
     left: 0;
@@ -81,18 +83,23 @@ header h1::before {
 }
 
 .modal-overlay.active {
-    display: block;
+    transform: scale(1);
 }
 
 .form-container {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s;
     background-color: var(--theme-bg);
     border-radius: 0.5rem;
-    width: min(20rem, 40%);
+    width: min(20rem, 61%);
     padding: 1.5rem 1rem;
+}
+
+.form-container.active {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 form {
@@ -120,6 +127,9 @@ input[type=text] {
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    outline-color: black;
+    transition: all 0.2s;
+    background-color: var(--theme-bg);
 }
 
 .form-button {
@@ -130,6 +140,69 @@ input[type=text] {
 
 .game-page {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 4rem);
+    gap: 1rem;
+    
+}
+
+.status-message {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.game-page-middle {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 0.1rem;
+    background-color: black;
+    border-radius: 0.3rem;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    border: 0.2rem solid black;
+    height: min(18vw, 7rem);
+    width: min(18vw, 7rem);
+    border-radius: 0.4rem;
+    transition: all 0.2s;
+    background-color: var(--theme-bg);
+}
+
+.square:hover {
+    background-color: rgb(244, 225, 255);
+    cursor: pointer;
+}
+
+.player-1 {
+    color: var(--theme-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-2 {
+    color: var(--theme-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-1, .player-2 {
+    font-weight: bold;
+    font-size: min(3rem, 5vw);
 }
 
 .game-buttons-group {
@@ -147,4 +220,5 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }

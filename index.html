@@ -18,38 +18,40 @@
             <h1>Tic Tac Toe</h1>
         </header>
         <main>
-            <button>2 Players</button>
-            <button>Play vs AI</button>
+            <button id="player-form-button">2 Players</button>
+            <button id="ai-form-button">Play vs AI</button>
         </main>
     </div>
-    <div class="modal-overlay">
-        <div class="form-container" id="player-form-container">
-            <form id="" action="">
-                <h1>Enter Player Names</h1>
-                <label for="">Player 1 (X):</label>
-                <input type="text" name="" id="" placeholder="Player 1" required>
-                <label for="">Player 2 (O):</label>
-                <input type="text" name="" id="" placeholder="Player 2" required>
-                <button class="hoverable form-button" type="reset">Cancel</button>
-                <button class="hoverable form-button" type="submit">Enter</button>
-            </form>
-        </div>
-        <div class="form-container" id="ai-form-container">
-            <form id="" action="">
-                <h1>Enter Player Name</h1>
-                <input type="text" name="" id="">
-                <button type="submit">Enter</button>
-            </form>
-        </div>
+    <div class="modal-overlay"></div>
+    <div class="form-container" id="player-form-container">
+        <form id="player-form" action="">
+            <h1>Enter Player Names</h1>
+            <label for="">Player 1 (X):</label>
+            <input type="text" name="" id="player-1-name" value="Player 1" placeholder="Player 1" maxlength="10" required>
+            <label for="">Player 2 (O):</label>
+            <input type="text" name="" id="player-2-name" value="Player 2" placeholder="Player 2" maxlength="10" required>
+            <button class="hoverable form-button cancel-button" type="reset">Cancel</button>
+            <button class="hoverable form-button" type="submit">Enter</button>
+        </form>
+    </div>
+    <div class="form-container" id="ai-form-container">
+        <form id="ai-form" action="">
+            <h1>Enter Player Name</h1>
+            <input type="text" name="" id=" maxlength="10" required>
+            <button class="hoverable form-button cancel-button" type="reset">Cancel</button>
+            <button class="hoverable form-button" type="submit">Enter</button>
+        </form>
     </div>
     <main class="game-page">
-        <div class="status-message"></div>
-        <div class="player-1"></div>
-        <div class="board"></div>
-        <div class="player-2"></div>
+        <div class="status-message">Player 1's Turn</div>
+        <div class="game-page-middle">
+            <div class="player-1">Player 1</div>
+            <div class="board"></div>
+            <div class="player-2">Player 2</div>
+        </div>
         <div class="game-buttons-group">
-            <button>Go Back</button>
-            <button>Restart</button>
+            <button id="go-back-button">Go Back</button>
+            <button id="restart-button">Restart</button>
         </div>
     </main>
     <footer>
